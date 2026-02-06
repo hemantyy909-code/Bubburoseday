@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Rose Day My Bubbu 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.8);
+}
+
+/* Rose petals */
+.rose {
+    position: fixed;
+    top: -10%;
+    font-size: 24px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🌹 Happy Rose Day 🌹</h1>
+    <p>To my cutest Bubbu 💕<br>
+    Every rose reminds me of you ❤️</p>
+
+    <img src="photo.jpg" alt="My Love">
+
+    <p>
+        You are my smile, my happiness,<br>
+        my forever 🌹<br>
+        I love you endlessly 💖
+    </p>
+</div>
+
+<audio autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function createRose() {
+    const rose = document.createElement("div");
+    rose.classList.add("rose");
+    rose.innerHTML = "🌹";
+    rose.style.left = Math.random() * 100 + "vw";
+    rose.style.animationDuration = (3 + Math.random() * 5) + "s";
+    document.body.appendChild(rose);
+
+    setTimeout(() => {
+        rose.remove();
+    }, 8000);
+}
+
+setInterval(createRose, 300);
+</script>
+
+</body>
+</html>
